@@ -2,8 +2,8 @@ import NextAuth from 'next-auth';
 import {authConfig} from './auth.config';
 import {clerkMiddleware} from "@clerk/nextjs/server";
 
-export default NextAuth(authConfig).auth;
-
+//export default NextAuth(authConfig).auth;
+export default clerkMiddleware();
 export const config = {
     // https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher
     matcher: [// Skip Next.js internals and all static files, unless found in search params
