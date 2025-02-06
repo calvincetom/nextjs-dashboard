@@ -3,13 +3,7 @@ import {Metadata} from 'next';
 import '@/app/ui/global.css';
 import {inter} from '@/app/ui/fonts';
 import React from "react";
-import {
-    ClerkProvider,
-    SignInButton,
-    SignedIn,
-    SignedOut,
-    UserButton
-} from '@clerk/nextjs'
+
 
 
 export const metadata: Metadata = {
@@ -39,6 +33,6 @@ export default function RootLayout({
                     {children}
                 </body>
             </html>
-        {/*</ClerkProvider>*/}
+        //*</ClerkProvider>
     );
 }
