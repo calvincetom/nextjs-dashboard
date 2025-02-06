@@ -3,7 +3,13 @@ import {Metadata} from 'next';
 import '@/app/ui/global.css';
 import {inter} from '@/app/ui/fonts';
 import React from "react";
-
+import {
+    ClerkProvider,
+    SignInButton,
+    SignedIn,
+    SignedOut,
+    UserButton
+} from '@clerk/nextjs'
 
 
 export const metadata: Metadata = {
@@ -21,8 +27,18 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <html lang="en">
-        <body className={`${inter.className} antialiased`}>{children}</body>
-        </html>
+        <ClerkProvider>
+            <html lang="en">
+                <body className={`${inter.className} antialiased`}>
+                    <SignedOut>
+                        <SignInButton/>
+                    </SignedOut>
+                    <SignedIn>
+                        <UserButton/>
+                    </SignedIn>
+                    {children}
+                </body>
+            </html>
+        </ClerkProvider>
     );
 }
