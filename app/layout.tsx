@@ -27,18 +27,18 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
     return (
-        <ClerkProvider>
+        // <ClerkProvider>
             <html lang="en">
                 <body className={`${inter.className} antialiased`}>
-                    <SignedOut>
-                        <SignInButton/>
-                    </SignedOut>
-                    <SignedIn>
-                        <UserButton/>
-                    </SignedIn>
+                    {/*<SignedOut>*/}
+                    {/*    <SignInButton/>*/}
+                    {/*</SignedOut>*/}
+                    {/*<SignedIn>*/}
+                    {/*    <UserButton/>*/}
+                    {/*</SignedIn>*/}
                     {children}
                 </body>
             </html>
-        </ClerkProvider>
+        {/*</ClerkProvider>*/}
     );
 }
