@@ -1,16 +1,20 @@
 import Image from 'next/image';
 import { lusitana } from '@/app/ui/fonts';
 import Search from '@/app/ui/search';
-import {
-  CustomersTableType,
-  FormattedCustomersTable,
-} from '@/app/lib/definitions';
+// import {
+//   CustomersTableType,
+//   FormattedCustomersTable,
+// } from '@/app/lib/definitions';
+import { fetchCustomers, fetchFilteredCustomers } from '@/app/lib/data';
 
 export default async function CustomersTable({
-  customers,
+  query,
+ 
 }: {
-  customers: FormattedCustomersTable[];
+  query: string
 }) {
+  // Implement your table rendering logic here
+  const customers = await fetchFilteredCustomers(query);
   return (
     <div className="w-full">
       <h1 className={`${lusitana.className} mb-8 text-xl md:text-2xl`}>
